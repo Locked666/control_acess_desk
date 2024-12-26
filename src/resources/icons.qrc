@@ -1,0 +1,9 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>error.png</file>
+    <file>reload.png</file>
+    <file>config_dark.png</file>
+    <file>pencil.png</file>
+    <file>save.png</file>
+  </qresource>
+</RCC>

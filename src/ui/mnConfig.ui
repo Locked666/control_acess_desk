@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>mnConfig</class>
+ <widget class="QWidget" name="mnConfig">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>342</width>
+    <height>279</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>338</width>
+    <height>279</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>367</width>
+    <height>279</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_3">
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <property name="leftMargin">
+      <number>9</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>........................Arquivo de Configuração...............................</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="frm_body">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>301</width>
+         <height>191</height>
+        </size>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <widget class="QWidget" name="layoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>40</y>
+          <width>284</width>
+          <height>117</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_8">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_9">
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_10">
+               <item>
+                <widget class="QLabel" name="label_6">
+                 <property name="text">
+                  <string>Usuário :</string>
+                 </property>
+                 <property name="buddy">
+                  <cstring>text_user</cstring>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="text_user"/>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_11">
+               <item>
+                <widget class="QLabel" name="label_7">
+                 <property name="text">
+                  <string>Host Web :</string>
+                 </property>
+                 <property name="buddy">
+                  <cstring>text_host</cstring>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="text_host"/>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_12">
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_13">
+               <item>
+                <widget class="QLabel" name="label_8">
+                 <property name="text">
+                  <string>Senha :</string>
+                 </property>
+                 <property name="buddy">
+                  <cstring>text_password</cstring>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="text_password">
+                 <property name="echoMode">
+                  <enum>QLineEdit::Password</enum>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_14">
+               <item>
+                <widget class="QLabel" name="label_9">
+                 <property name="text">
+                  <string>Porta Web :</string>
+                 </property>
+                 <property name="buddy">
+                  <cstring>text_port</cstring>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="text_port"/>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="checkbox_debug">
+           <property name="text">
+            <string>Mode Debug.</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="">
+        <property name="geometry">
+         <rect>
+          <x>200</x>
+          <y>1</y>
+          <width>80</width>
+          <height>35</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QLabel" name="label_2">
+           <property name="text">
+            <string>Testar:</string>
+           </property>
+           <property name="buddy">
+            <cstring>pushButton_4</cstring>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_4">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="../resources/icons.qrc">
+             <normaloff>:/icons/reload.png</normaloff>:/icons/reload.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>25</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="flat">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="frame_2">
+       <property name="maximumSize">
+        <size>
+         <width>331</width>
+         <height>45</height>
+        </size>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QPushButton" name="bnt_edit">
+            <property name="text">
+             <string>Alterar</string>
+            </property>
+            <property name="icon">
+             <iconset resource="../resources/icons.qrc">
+              <normaloff>:/icons/pencil.png</normaloff>:/icons/pencil.png</iconset>
+            </property>
+            <property name="shortcut">
+             <string>Alt+E</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="bnt_save">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string>Salvar</string>
+            </property>
+            <property name="icon">
+             <iconset resource="../resources/icons.qrc">
+              <normaloff>:/icons/save.png</normaloff>:/icons/save.png</iconset>
+            </property>
+            <property name="shortcut">
+             <string>Alt+S</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="bnt_cancel">
+            <property name="text">
+             <string>Cancelar</string>
+            </property>
+            <property name="icon">
+             <iconset resource="../resources/icons.qrc">
+              <normaloff>:/icons/error.png</normaloff>:/icons/error.png</iconset>
+            </property>
+            <property name="shortcut">
+             <string>Alt+C</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>text_user</tabstop>
+  <tabstop>text_password</tabstop>
+  <tabstop>text_host</tabstop>
+  <tabstop>text_port</tabstop>
+  <tabstop>checkbox_debug</tabstop>
+  <tabstop>bnt_edit</tabstop>
+  <tabstop>bnt_cancel</tabstop>
+  <tabstop>bnt_save</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../resources/icons.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>text_user</sender>
+   <signal>returnPressed()</signal>
+   <receiver>text_password</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>120</x>
+     <y>97</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>218</x>
+     <y>101</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>text_password</sender>
+   <signal>returnPressed()</signal>
+   <receiver>text_host</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>273</x>
+     <y>101</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>117</x>
+     <y>152</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>text_host</sender>
+   <signal>returnPressed()</signal>
+   <receiver>text_port</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>90</x>
+     <y>158</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>175</x>
+     <y>158</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>text_port</sender>
+   <signal>returnPressed()</signal>
+   <receiver>checkbox_debug</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>299</x>
+     <y>147</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>64</x>
+     <y>181</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

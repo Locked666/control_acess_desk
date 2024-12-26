@@ -1,0 +1,16 @@
+chardet
+greenlet
+Nuitka
+numpy
+ordered
+pillow
+pyqtdarktheme
+pyqtgraph
+PySide6
+PySide6_Addons
+PySide6_Essentials
+reportlab
+shiboken6
+SQLAlchemy
+typing_extensions
+zstandard
