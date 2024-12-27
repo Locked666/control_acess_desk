@@ -30,12 +30,18 @@ settings_sec =  {
     'port_local': '00000'
 }
 
+app_path_sec = {
+    'teamviewer' : r'C:\Program Files (x86)\TeamViewer\TeamViewer.exe',
+    'anydesk' : r'C:\Program Files (x86)\AnyDesk\AnyDesk.exe',
+    'qsconnect' : r''
+}
 
 
 def exist_config():
     if not os.path.exists(PATH_CONFIG_INI):
         try:
             config['Settings'] = settings_sec
+            config['AppPath'] = app_path_sec
             with open(PATH_CONFIG_INI, 'w') as configfile:
                 config.write(configfile)
                 return True

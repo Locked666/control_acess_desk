@@ -10,12 +10,13 @@ import threading
 from flask import Flask, request
 import subprocess
 import os
-import asyncio
 import requests
 import sys
 from config import PATH_CONFIG_INI, complement_ini, USERNAME_INI, PASSWORD_INI, PORT_WEB_INI, HOST_WEB_INI, DEBUG_INI,NAME_APP,get_config
 from ui.mnConfig import Ui_mnConfig
 from utils.encrypt import encrypt,decrypt
+from PySide6.QtWidgets import QFileDialog
+from api import start_flask
 app = Flask(__name__)
 
 class Window(QWidget,Ui_mnConfig):
@@ -35,9 +36,43 @@ class Window(QWidget,Ui_mnConfig):
         self.bnt_cancel.clicked.connect(self.callback_cancel)
         self.bnt_edit.clicked.connect(self.callback_edit)
         self.pushButton_4.clicked.connect(self.on_sync_api)
-
+        self.tool_path_teamviewer.clicked.connect(self.on_open_path_teamviewer)
+        self.tool_path_anydesk.clicked.connect(self.on_open_path_anydesk)
+        self.tool_path_qsconnect.clicked.connect(self.on_open_path_qsconnect)
         # Load config
         self.load_config()
+
+    def on_open_path_teamviewer(self):
+        file_dialog = QFileDialog(self)
+        file_dialog.setFileMode(QFileDialog.ExistingFile)
+        file_dialog.setNameFilter("Executável (*.exe)")
+
+        # Obtém o diretório %ProgramFiles(x86)%
+        program_files_x86 = os.environ.get("ProgramFiles(x86)", r"C:\Program Files (x86)")
+        file_dialog.setDirectory(program_files_x86)
+
+        if file_dialog.exec():
+            file_path = file_dialog.selectedFiles()[0]
+            self.text_path_teamviewer.setText(file_path)
+
+
+    def on_open_path_anydesk(self):
+        file_dialog = QFileDialog(self)
+        file_dialog.setFileMode(QFileDialog.ExistingFile)
+        file_dialog.setNameFilter("Executavel (*.exe)")
+        if file_dialog.exec():
+            file_path = file_dialog.selectedFiles()[0]
+            self.text_path_anydesk.setText(file_path)     
+
+    def on_open_path_qsconnect(self):
+        file_dialog = QFileDialog(self)
+        file_dialog.setFileMode(QFileDialog.ExistingFile)
+        file_dialog.setNameFilter("Executavel (*.exe)")
+        if file_dialog.exec():
+            file_path = file_dialog.selectedFiles()[0]
+            self.text_path_qsconnect.setText(file_path)        
+
+    
 
     def on_sync_api(self):
                
@@ -66,6 +101,8 @@ class Window(QWidget,Ui_mnConfig):
         
         pass
 
+
+
     def load_config(self):
         # Load config
         self.config = get_config()
@@ -76,6 +113,10 @@ class Window(QWidget,Ui_mnConfig):
         self.text_port_local.setText(get_config()['Settings']['port_local'])
         self.text_host.setText(get_config()['Settings']['host_web'])
         self.checkbox_debug.setChecked( True if get_config()['Settings']['debug'] == 'True' else False)
+        self.text_path_teamviewer.setText(get_config()['AppPath']['teamviewer'])
+        self.text_path_anydesk.setText(get_config()['AppPath']['anydesk'])
+        self.text_path_qsconnect.setText(get_config()['AppPath']['qsconnect'])
+
 
 
 
@@ -92,8 +133,13 @@ class Window(QWidget,Ui_mnConfig):
             complement_ini('Settings', 'host_web', self.text_host.text().strip())
             complement_ini('Settings', 'port_local', self.text_port_local.text().strip())
             complement_ini('Settings', 'debug', 'True' if self.checkbox_debug.isChecked() else 'False')
+            complement_ini('AppPath', 'teamviewer', self.text_path_teamviewer.text().strip())
+            complement_ini('AppPath', 'anydesk', self.text_path_anydesk.text().strip())
+            complement_ini('AppPath', 'qsconnect', self.text_path_qsconnect.text().strip())
+
             QMessageBox.information(self, 'Informação', 'Configurações salvas com sucesso.')
             self.frm_body.setEnabled(False)
+            self.frm_path.setEnabled(False)
             self.control_button('viewer')
         except Exception as e:
             QMessageBox.critical(self, 'Erro', f'Ocorreu um erro ao salvar as configurações:\n {e}')
@@ -108,6 +154,7 @@ class Window(QWidget,Ui_mnConfig):
 
             if reply == QMessageBox.Yes:
                 self.frm_body.setEnabled(False)
+                self.frm_path.setEnabled(False)
                 self.control_button('viewer')
                 self.load_config()
 
@@ -122,6 +169,7 @@ class Window(QWidget,Ui_mnConfig):
     @Slot()
     def callback_edit(self):
         self.frm_body.setEnabled(True)
+        self.frm_path.setEnabled(True)
         self.control_button('edit')
 
 
@@ -151,7 +199,7 @@ class Window(QWidget,Ui_mnConfig):
                                      QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
         else :
             reply = QMessageBox.question(self, 'Confirmar Saída',
-                                        'Você realmente fechar o lançamento?',
+                                        'Você realmente fechar a tela de configurações ?',
                                         QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
 
         if reply == QMessageBox.Yes:
@@ -211,7 +259,7 @@ class Application(QApplication):
         self.chk_notificar= QAction('Notificar')
         self.chk_notificar.setCheckable(True)
         self.chk_notificar.setChecked(True)
-        # self.chk_option.triggered.connect(self.on_checkbox_change)
+        self.chk_notificar.triggered.connect(lambda: print(f'Notificar: {self.chk_notificar.isChecked()}'))
 
         # Create quit button
         self.btn_quit = QAction('Sair')
@@ -257,15 +305,19 @@ class Application(QApplication):
 
 
 def main():
+    
     # Create application
     app = Application(sys.argv)
+    threading.Thread(target=start_flask).start()  
 
     # Application main loop
     sys.exit(app.exec())
 
 
 if __name__ == '__main__':
-    main()     
+    main()
+    
+    # threading.Thread(target=start_flask).start()     
 
 
 
