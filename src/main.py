@@ -10,6 +10,8 @@ import threading
 from flask import Flask, request
 import subprocess
 import os
+import asyncio
+import requests
 import sys
 from config import PATH_CONFIG_INI, complement_ini, USERNAME_INI, PASSWORD_INI, PORT_WEB_INI, HOST_WEB_INI, DEBUG_INI,NAME_APP,get_config
 from ui.mnConfig import Ui_mnConfig
@@ -31,9 +33,37 @@ class Window(QWidget,Ui_mnConfig):
         self.bnt_save.clicked.connect(self.callback_save)
         self.bnt_cancel.clicked.connect(self.callback_cancel)
         self.bnt_edit.clicked.connect(self.callback_edit)
+        self.pushButton_4.clicked.connect(self.on_sync_api)
 
         # Load config
         self.load_config()
+
+    def on_sync_api(self):
+               
+        p = encrypt(self.text_password.text().strip(),os.environ.get('APP_SECRET_KEY'),os.environ.get('APP_SECRET_SALT'))
+        url = f'http://{self.text_host.text().strip()}:{self.text_port.text().strip()}/CheckStatus' 
+        params = { 'username': {self.text_user.text().strip()}, 
+                  'password': {p} }
+        try :  
+            response = requests.get(url, params=params) 
+            if response.status_code == 200: 
+                QMessageBox.information(self, 'Informação', 'Conexão realizada com sucesso.')
+            else: 
+                if self.checkbox_debug.isChecked():
+                    QMessageBox.warning(self,'Erro ao conectar', f'Ocorreu um erro ao conectar com o servidor\n {response.json()}')
+                else :  
+                    QMessageBox.warning(self,'Erro ao conectar', f'Ocorreu um erro ao conectar com o servidor\n Erro codigo: {response.status_code}')  
+                
+            
+        
+        except Exception as e: 
+            if self.checkbox_debug.isChecked():
+                QMessageBox.warning(self, 'Erro ao realizar operação',f"Ocorreu um erro ao conectar com o servidor\n {e}")
+            else :     
+                QMessageBox.warning(self, 'Erro ao realizar operação',f"Ocorreu um erro ao conectar com o servidor")
+        
+        
+        pass
 
     def load_config(self):
         # Load config
@@ -44,6 +74,8 @@ class Window(QWidget,Ui_mnConfig):
         self.text_port.setText(get_config()['Settings']['port_web'])
         self.text_host.setText(get_config()['Settings']['host_web'])
         self.checkbox_debug.setChecked( True if get_config()['Settings']['debug'] == 'True' else False)
+
+
 
     @Slot()
     def callback_save(self):
