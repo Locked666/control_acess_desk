@@ -16,6 +16,7 @@ import sys
 from config import PATH_CONFIG_INI, complement_ini, USERNAME_INI, PASSWORD_INI, PORT_WEB_INI, HOST_WEB_INI, DEBUG_INI,NAME_APP,get_config
 from ui.mnConfig import Ui_mnConfig
 from utils.encrypt import encrypt,decrypt
+app = Flask(__name__)
 
 class Window(QWidget,Ui_mnConfig):
     def __init__(self, system_tray):
@@ -72,6 +73,7 @@ class Window(QWidget,Ui_mnConfig):
         if get_config()['Settings']['password']:
             self.text_password.setText(decrypt(get_config()['Settings']['password'],os.environ.get('APP_SECRET_KEY'),os.environ.get('APP_SECRET_SALT')))    
         self.text_port.setText(get_config()['Settings']['port_web'])
+        self.text_port_local.setText(get_config()['Settings']['port_local'])
         self.text_host.setText(get_config()['Settings']['host_web'])
         self.checkbox_debug.setChecked( True if get_config()['Settings']['debug'] == 'True' else False)
 
@@ -88,6 +90,7 @@ class Window(QWidget,Ui_mnConfig):
             complement_ini('Settings', 'password',p.decode() )
             complement_ini('Settings', 'port_web', self.text_port.text().strip())
             complement_ini('Settings', 'host_web', self.text_host.text().strip())
+            complement_ini('Settings', 'port_local', self.text_port_local.text().strip())
             complement_ini('Settings', 'debug', 'True' if self.checkbox_debug.isChecked() else 'False')
             QMessageBox.information(self, 'Informação', 'Configurações salvas com sucesso.')
             self.frm_body.setEnabled(False)
@@ -161,6 +164,7 @@ class Window(QWidget,Ui_mnConfig):
 class Application(QApplication):
     def __init__(self, args):
         super().__init__(args)
+        
 
         self._menu = None
         self._system_tray = None
@@ -195,7 +199,7 @@ class Application(QApplication):
         self._menu = QMenu()
 
         # Create hello button
-        self.btn_show_hide = QAction('Show')
+        self.btn_show_hide = QAction('Configurações')
         self.btn_show_hide.triggered.connect(self.on_btn_show)
 
         # self.btn_minimize = QAction('Minimize')
@@ -204,19 +208,21 @@ class Application(QApplication):
         # self.btn_hello = QAction('Say hi!')
         # self.btn_hello.triggered.connect(self.on_btn_hello)
 
-        # self.chk_option = QAction('Value')
-        # self.chk_option.setCheckable(True)
-        # self.chk_option.setChecked(True)
+        self.chk_notificar= QAction('Notificar')
+        self.chk_notificar.setCheckable(True)
+        self.chk_notificar.setChecked(True)
         # self.chk_option.triggered.connect(self.on_checkbox_change)
 
         # Create quit button
-        self.btn_quit = QAction('Quit')
+        self.btn_quit = QAction('Sair')
         self.btn_quit.triggered.connect(QApplication.quit)
 
         # Add buttons to menu
         self._menu.addAction(self.btn_show_hide)
+        self._menu.addAction(self.chk_notificar)
 
         self._menu.addSeparator()
+        
         self._menu.addAction(self.btn_quit)
 
     def create_system_tray(self):
@@ -240,7 +246,8 @@ class Application(QApplication):
         # Show system tray
         self._system_tray.show()
 
-
+   
+    
     def on_btn_show(self):
         # When the window is minimized on Ubuntu, it does not restore to normal
         # after calling show() or showNormal(). Workaround is to call hide()
@@ -258,7 +265,7 @@ def main():
 
 
 if __name__ == '__main__':
-    main()       
+    main()     
 
 
 

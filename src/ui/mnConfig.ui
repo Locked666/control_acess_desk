@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>342</width>
-    <height>279</height>
+    <width>457</width>
+    <height>363</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -18,8 +18,8 @@
   </property>
   <property name="maximumSize">
    <size>
-    <width>367</width>
-    <height>279</height>
+    <width>1600</width>
+    <height>1600</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -40,7 +40,7 @@
         </sizepolicy>
        </property>
        <property name="text">
-        <string>........................Arquivo de Configuração...............................</string>
+        <string>......................................Arquivo de Configuração..........................................</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -48,163 +48,364 @@
       </widget>
      </item>
      <item>
-      <widget class="QFrame" name="frm_body">
+      <widget class="QTabWidget" name="frm_body">
        <property name="enabled">
-        <bool>false</bool>
+        <bool>true</bool>
        </property>
        <property name="maximumSize">
         <size>
-         <width>301</width>
-         <height>191</height>
+         <width>1600</width>
+         <height>1600</height>
         </size>
        </property>
-       <property name="frameShape">
-        <enum>QFrame::StyledPanel</enum>
+       <property name="currentIndex">
+        <number>1</number>
        </property>
-       <property name="frameShadow">
-        <enum>QFrame::Raised</enum>
-       </property>
-       <widget class="QWidget" name="layoutWidget">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>40</y>
-          <width>284</width>
-          <height>117</height>
-         </rect>
-        </property>
-        <layout class="QVBoxLayout" name="verticalLayout_8">
+       <widget class="QWidget" name="tab_first" native="true">
+        <attribute name="title">
+         <string>Principal</string>
+        </attribute>
+        <layout class="QVBoxLayout" name="verticalLayout_9">
          <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_2">
-           <item>
-            <layout class="QVBoxLayout" name="verticalLayout_9">
-             <item>
-              <layout class="QVBoxLayout" name="verticalLayout_10">
-               <item>
-                <widget class="QLabel" name="label_6">
-                 <property name="text">
-                  <string>Usuário :</string>
-                 </property>
-                 <property name="buddy">
-                  <cstring>text_user</cstring>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLineEdit" name="text_user"/>
-               </item>
-              </layout>
-             </item>
-             <item>
-              <layout class="QVBoxLayout" name="verticalLayout_11">
-               <item>
-                <widget class="QLabel" name="label_7">
-                 <property name="text">
-                  <string>Host Web :</string>
-                 </property>
-                 <property name="buddy">
-                  <cstring>text_host</cstring>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLineEdit" name="text_host"/>
-               </item>
-              </layout>
-             </item>
-            </layout>
-           </item>
-           <item>
-            <layout class="QVBoxLayout" name="verticalLayout_12">
-             <item>
-              <layout class="QVBoxLayout" name="verticalLayout_13">
-               <item>
-                <widget class="QLabel" name="label_8">
-                 <property name="text">
-                  <string>Senha :</string>
-                 </property>
-                 <property name="buddy">
-                  <cstring>text_password</cstring>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLineEdit" name="text_password">
-                 <property name="echoMode">
-                  <enum>QLineEdit::Password</enum>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-             <item>
-              <layout class="QVBoxLayout" name="verticalLayout_14">
-               <item>
-                <widget class="QLabel" name="label_9">
-                 <property name="text">
-                  <string>Porta Web :</string>
-                 </property>
-                 <property name="buddy">
-                  <cstring>text_port</cstring>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLineEdit" name="text_port"/>
-               </item>
-              </layout>
-             </item>
-            </layout>
-           </item>
-          </layout>
+          <widget class="QFrame" name="">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>37</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>37</height>
+            </size>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_8">
+            <item>
+             <spacer name="horizontalSpacer">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>298</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_3">
+              <item>
+               <widget class="QLabel" name="label_2">
+                <property name="text">
+                 <string>Testar:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="pushButton_4">
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="icon">
+                 <iconset resource="../resources/icons.qrc">
+                  <normaloff>:/icons/reload.png</normaloff>:/icons/reload.png</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>25</width>
+                  <height>25</height>
+                 </size>
+                </property>
+                <property name="flat">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
          </item>
          <item>
-          <widget class="QCheckBox" name="checkbox_debug">
-           <property name="text">
-            <string>Mode Debug.</string>
+          <widget class="QFrame" name="frame">
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
            </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_16">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_12">
+              <item>
+               <layout class="QVBoxLayout" name="verticalLayout_5">
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_2">
+                  <item>
+                   <layout class="QVBoxLayout" name="verticalLayout_10">
+                    <item>
+                     <widget class="QLabel" name="label_6">
+                      <property name="text">
+                       <string>Usuário :</string>
+                      </property>
+                      <property name="buddy">
+                       <cstring>text_user</cstring>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLineEdit" name="text_user"/>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <layout class="QVBoxLayout" name="verticalLayout_13">
+                    <item>
+                     <widget class="QLabel" name="label_8">
+                      <property name="text">
+                       <string>Senha :</string>
+                      </property>
+                      <property name="buddy">
+                       <cstring>text_password</cstring>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLineEdit" name="text_password">
+                      <property name="echoMode">
+                       <enum>QLineEdit::Password</enum>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_4">
+                  <item>
+                   <layout class="QVBoxLayout" name="verticalLayout_11">
+                    <item>
+                     <widget class="QLabel" name="label_7">
+                      <property name="text">
+                       <string>Host Web :</string>
+                      </property>
+                      <property name="buddy">
+                       <cstring>text_host</cstring>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLineEdit" name="text_host"/>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <layout class="QVBoxLayout" name="verticalLayout_14">
+                    <item>
+                     <widget class="QLabel" name="label_9">
+                      <property name="text">
+                       <string>Porta Web :</string>
+                      </property>
+                      <property name="buddy">
+                       <cstring>text_port</cstring>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLineEdit" name="text_port"/>
+                    </item>
+                   </layout>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_9">
+                  <item>
+                   <layout class="QVBoxLayout" name="verticalLayout_4">
+                    <property name="spacing">
+                     <number>6</number>
+                    </property>
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <item>
+                     <widget class="QLabel" name="label_10">
+                      <property name="text">
+                       <string>Porta Local : </string>
+                      </property>
+                      <property name="buddy">
+                       <cstring>text_port_local</cstring>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLineEdit" name="text_port_local">
+                      <property name="maximumSize">
+                       <size>
+                        <width>1600</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <layout class="QVBoxLayout" name="verticalLayout_19">
+                    <item>
+                     <widget class="QLabel" name="label_12">
+                      <property name="text">
+                       <string>Time Notificação :</string>
+                      </property>
+                      <property name="buddy">
+                       <cstring>text_port_3</cstring>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLineEdit" name="text_port_3"/>
+                    </item>
+                   </layout>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="checkbox_debug">
+                <property name="text">
+                 <string>Mode Debug.</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
           </widget>
          </item>
         </layout>
        </widget>
-       <widget class="QWidget" name="">
-        <property name="geometry">
-         <rect>
-          <x>200</x>
-          <y>1</y>
-          <width>80</width>
-          <height>35</height>
-         </rect>
-        </property>
-        <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <widget class="QWidget" name="tab_path_app">
+        <attribute name="title">
+         <string>Caminho</string>
+        </attribute>
+        <layout class="QVBoxLayout" name="verticalLayout_18">
          <item>
-          <widget class="QLabel" name="label_2">
-           <property name="text">
-            <string>Testar:</string>
+          <widget class="QFrame" name="frame_3">
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
            </property>
-           <property name="buddy">
-            <cstring>pushButton_4</cstring>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
            </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="pushButton_4">
-           <property name="text">
-            <string/>
-           </property>
-           <property name="icon">
-            <iconset resource="../resources/icons.qrc">
-             <normaloff>:/icons/reload.png</normaloff>:/icons/reload.png</iconset>
-           </property>
-           <property name="iconSize">
-            <size>
-             <width>25</width>
-             <height>25</height>
-            </size>
-           </property>
-           <property name="flat">
-            <bool>true</bool>
-           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_17">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_15">
+              <item>
+               <layout class="QVBoxLayout" name="verticalLayout_6">
+                <item>
+                 <widget class="QLabel" name="label_3">
+                  <property name="text">
+                   <string>Team Viewer:</string>
+                  </property>
+                  <property name="buddy">
+                   <cstring>text_path_teamviewer</cstring>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_5">
+                  <item>
+                   <widget class="QLineEdit" name="text_path_teamviewer"/>
+                  </item>
+                  <item>
+                   <widget class="QToolButton" name="tool_path_teamviewer">
+                    <property name="text">
+                     <string>...</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QVBoxLayout" name="verticalLayout_7">
+                <item>
+                 <widget class="QLabel" name="label_4">
+                  <property name="text">
+                   <string>QSConect :</string>
+                  </property>
+                  <property name="buddy">
+                   <cstring>text_path_qsconnect</cstring>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_6">
+                  <item>
+                   <widget class="QLineEdit" name="text_path_qsconnect"/>
+                  </item>
+                  <item>
+                   <widget class="QToolButton" name="tool_path_qsconnect">
+                    <property name="text">
+                     <string>...</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QVBoxLayout" name="verticalLayout_8">
+                <item>
+                 <widget class="QLabel" name="label_5">
+                  <property name="text">
+                   <string>AnyDesk :</string>
+                  </property>
+                  <property name="buddy">
+                   <cstring>text_path_anydesk</cstring>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_7">
+                  <item>
+                   <widget class="QLineEdit" name="text_path_anydesk"/>
+                  </item>
+                  <item>
+                   <widget class="QToolButton" name="tool_path_anydesk">
+                    <property name="text">
+                     <string>...</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+           </layout>
           </widget>
          </item>
         </layout>
@@ -215,7 +416,7 @@
       <widget class="QFrame" name="frame_2">
        <property name="maximumSize">
         <size>
-         <width>331</width>
+         <width>1600</width>
          <height>45</height>
         </size>
        </property>
@@ -238,7 +439,7 @@
               <normaloff>:/icons/pencil.png</normaloff>:/icons/pencil.png</iconset>
             </property>
             <property name="shortcut">
-             <string>Alt+E</string>
+             <string>Alt+A</string>
             </property>
            </widget>
           </item>
@@ -287,78 +488,23 @@
   <tabstop>text_password</tabstop>
   <tabstop>text_host</tabstop>
   <tabstop>text_port</tabstop>
+  <tabstop>text_port_local</tabstop>
+  <tabstop>text_port_3</tabstop>
   <tabstop>checkbox_debug</tabstop>
   <tabstop>bnt_edit</tabstop>
-  <tabstop>bnt_cancel</tabstop>
   <tabstop>bnt_save</tabstop>
+  <tabstop>bnt_cancel</tabstop>
+  <tabstop>pushButton_4</tabstop>
+  <tabstop>text_path_teamviewer</tabstop>
+  <tabstop>tool_path_teamviewer</tabstop>
+  <tabstop>text_path_qsconnect</tabstop>
+  <tabstop>tool_path_qsconnect</tabstop>
+  <tabstop>text_path_anydesk</tabstop>
+  <tabstop>tool_path_anydesk</tabstop>
+  <tabstop>frm_body</tabstop>
  </tabstops>
  <resources>
   <include location="../resources/icons.qrc"/>
  </resources>
- <connections>
-  <connection>
-   <sender>text_user</sender>
-   <signal>returnPressed()</signal>
-   <receiver>text_password</receiver>
-   <slot>setFocus()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>120</x>
-     <y>97</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>218</x>
-     <y>101</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>text_password</sender>
-   <signal>returnPressed()</signal>
-   <receiver>text_host</receiver>
-   <slot>setFocus()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>273</x>
-     <y>101</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>117</x>
-     <y>152</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>text_host</sender>
-   <signal>returnPressed()</signal>
-   <receiver>text_port</receiver>
-   <slot>setFocus()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>90</x>
-     <y>158</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>175</x>
-     <y>158</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>text_port</sender>
-   <signal>returnPressed()</signal>
-   <receiver>checkbox_debug</receiver>
-   <slot>setFocus()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>299</x>
-     <y>147</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>64</x>
-     <y>181</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

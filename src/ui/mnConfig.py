@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'mnConfig.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.8.0
+## Created by: Qt User Interface Compiler version 6.8.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -24,9 +24,9 @@ class Ui_mnConfig(object):
     def setupUi(self, mnConfig):
         if not mnConfig.objectName():
             mnConfig.setObjectName(u"mnConfig")
-        mnConfig.resize(342, 279)
+        mnConfig.resize(372, 359)
         mnConfig.setMinimumSize(QSize(338, 279))
-        mnConfig.setMaximumSize(QSize(367, 279))
+        mnConfig.setMaximumSize(QSize(1600, 1600))
         self.verticalLayout_3 = QVBoxLayout(mnConfig)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.verticalLayout_2 = QVBoxLayout()
@@ -51,22 +51,43 @@ class Ui_mnConfig(object):
         self.frm_body.setFrameShadow(QFrame.Raised)
         self.layoutWidget = QWidget(self.frm_body)
         self.layoutWidget.setObjectName(u"layoutWidget")
-        self.layoutWidget.setGeometry(QRect(10, 40, 284, 117))
-        self.verticalLayout_8 = QVBoxLayout(self.layoutWidget)
-        self.verticalLayout_8.setObjectName(u"verticalLayout_8")
-        self.verticalLayout_8.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_2 = QHBoxLayout()
-        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.layoutWidget.setGeometry(QRect(200, 1, 80, 35))
+        self.horizontalLayout_3 = QHBoxLayout(self.layoutWidget)
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
+        self.label_2 = QLabel(self.layoutWidget)
+        self.label_2.setObjectName(u"label_2")
+
+        self.horizontalLayout_3.addWidget(self.label_2)
+
+        self.pushButton_4 = QPushButton(self.layoutWidget)
+        self.pushButton_4.setObjectName(u"pushButton_4")
+        icon = QIcon()
+        icon.addFile(u":/icons/reload.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.pushButton_4.setIcon(icon)
+        self.pushButton_4.setIconSize(QSize(25, 25))
+        self.pushButton_4.setFlat(True)
+
+        self.horizontalLayout_3.addWidget(self.pushButton_4)
+
+        self.widget = QWidget(self.frm_body)
+        self.widget.setObjectName(u"widget")
+        self.widget.setGeometry(QRect(11, 42, 284, 148))
+        self.verticalLayout_5 = QVBoxLayout(self.widget)
+        self.verticalLayout_5.setObjectName(u"verticalLayout_5")
+        self.verticalLayout_5.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_4 = QHBoxLayout()
+        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
         self.verticalLayout_9 = QVBoxLayout()
         self.verticalLayout_9.setObjectName(u"verticalLayout_9")
         self.verticalLayout_10 = QVBoxLayout()
         self.verticalLayout_10.setObjectName(u"verticalLayout_10")
-        self.label_6 = QLabel(self.layoutWidget)
+        self.label_6 = QLabel(self.widget)
         self.label_6.setObjectName(u"label_6")
 
         self.verticalLayout_10.addWidget(self.label_6)
 
-        self.text_user = QLineEdit(self.layoutWidget)
+        self.text_user = QLineEdit(self.widget)
         self.text_user.setObjectName(u"text_user")
 
         self.verticalLayout_10.addWidget(self.text_user)
@@ -76,12 +97,12 @@ class Ui_mnConfig(object):
 
         self.verticalLayout_11 = QVBoxLayout()
         self.verticalLayout_11.setObjectName(u"verticalLayout_11")
-        self.label_7 = QLabel(self.layoutWidget)
+        self.label_7 = QLabel(self.widget)
         self.label_7.setObjectName(u"label_7")
 
         self.verticalLayout_11.addWidget(self.label_7)
 
-        self.text_host = QLineEdit(self.layoutWidget)
+        self.text_host = QLineEdit(self.widget)
         self.text_host.setObjectName(u"text_host")
 
         self.verticalLayout_11.addWidget(self.text_host)
@@ -90,18 +111,18 @@ class Ui_mnConfig(object):
         self.verticalLayout_9.addLayout(self.verticalLayout_11)
 
 
-        self.horizontalLayout_2.addLayout(self.verticalLayout_9)
+        self.horizontalLayout_4.addLayout(self.verticalLayout_9)
 
         self.verticalLayout_12 = QVBoxLayout()
         self.verticalLayout_12.setObjectName(u"verticalLayout_12")
         self.verticalLayout_13 = QVBoxLayout()
         self.verticalLayout_13.setObjectName(u"verticalLayout_13")
-        self.label_8 = QLabel(self.layoutWidget)
+        self.label_8 = QLabel(self.widget)
         self.label_8.setObjectName(u"label_8")
 
         self.verticalLayout_13.addWidget(self.label_8)
 
-        self.text_password = QLineEdit(self.layoutWidget)
+        self.text_password = QLineEdit(self.widget)
         self.text_password.setObjectName(u"text_password")
         self.text_password.setEchoMode(QLineEdit.Password)
 
@@ -112,12 +133,12 @@ class Ui_mnConfig(object):
 
         self.verticalLayout_14 = QVBoxLayout()
         self.verticalLayout_14.setObjectName(u"verticalLayout_14")
-        self.label_9 = QLabel(self.layoutWidget)
+        self.label_9 = QLabel(self.widget)
         self.label_9.setObjectName(u"label_9")
 
         self.verticalLayout_14.addWidget(self.label_9)
 
-        self.text_port = QLineEdit(self.layoutWidget)
+        self.text_port = QLineEdit(self.widget)
         self.text_port.setObjectName(u"text_port")
 
         self.verticalLayout_14.addWidget(self.text_port)
@@ -126,36 +147,39 @@ class Ui_mnConfig(object):
         self.verticalLayout_12.addLayout(self.verticalLayout_14)
 
 
-        self.horizontalLayout_2.addLayout(self.verticalLayout_12)
+        self.horizontalLayout_4.addLayout(self.verticalLayout_12)
 
 
-        self.verticalLayout_8.addLayout(self.horizontalLayout_2)
+        self.verticalLayout_5.addLayout(self.horizontalLayout_4)
 
-        self.checkbox_debug = QCheckBox(self.layoutWidget)
+        self.horizontalLayout_2 = QHBoxLayout()
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.checkbox_debug = QCheckBox(self.widget)
         self.checkbox_debug.setObjectName(u"checkbox_debug")
 
-        self.verticalLayout_8.addWidget(self.checkbox_debug)
+        self.horizontalLayout_2.addWidget(self.checkbox_debug)
 
-        self.widget = QWidget(self.frm_body)
-        self.widget.setObjectName(u"widget")
-        self.widget.setGeometry(QRect(200, 1, 80, 35))
-        self.horizontalLayout_3 = QHBoxLayout(self.widget)
-        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
-        self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
-        self.label_2 = QLabel(self.widget)
-        self.label_2.setObjectName(u"label_2")
+        self.verticalLayout_4 = QVBoxLayout()
+        self.verticalLayout_4.setSpacing(6)
+        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
+        self.verticalLayout_4.setContentsMargins(6, -1, -1, 6)
+        self.label_10 = QLabel(self.widget)
+        self.label_10.setObjectName(u"label_10")
 
-        self.horizontalLayout_3.addWidget(self.label_2)
+        self.verticalLayout_4.addWidget(self.label_10)
 
-        self.pushButton_4 = QPushButton(self.widget)
-        self.pushButton_4.setObjectName(u"pushButton_4")
-        icon = QIcon()
-        icon.addFile(u":/icons/reload.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.pushButton_4.setIcon(icon)
-        self.pushButton_4.setIconSize(QSize(25, 25))
-        self.pushButton_4.setFlat(True)
+        self.text_port_local = QLineEdit(self.widget)
+        self.text_port_local.setObjectName(u"text_port_local")
+        self.text_port_local.setMaximumSize(QSize(133, 20))
+        self.text_port_local.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
-        self.horizontalLayout_3.addWidget(self.pushButton_4)
+        self.verticalLayout_4.addWidget(self.text_port_local)
+
+
+        self.horizontalLayout_2.addLayout(self.verticalLayout_4)
+
+
+        self.verticalLayout_5.addLayout(self.horizontalLayout_2)
 
 
         self.verticalLayout_2.addWidget(self.frm_body)
@@ -204,11 +228,12 @@ class Ui_mnConfig(object):
         self.verticalLayout_3.addLayout(self.verticalLayout_2)
 
 #if QT_CONFIG(shortcut)
+        self.label_2.setBuddy(self.pushButton_4)
         self.label_6.setBuddy(self.text_user)
         self.label_7.setBuddy(self.text_host)
         self.label_8.setBuddy(self.text_password)
         self.label_9.setBuddy(self.text_port)
-        self.label_2.setBuddy(self.pushButton_4)
+        self.label_10.setBuddy(self.text_port)
 #endif // QT_CONFIG(shortcut)
         QWidget.setTabOrder(self.text_user, self.text_password)
         QWidget.setTabOrder(self.text_password, self.text_host)
@@ -230,13 +255,14 @@ class Ui_mnConfig(object):
     def retranslateUi(self, mnConfig):
         mnConfig.setWindowTitle(QCoreApplication.translate("mnConfig", u"Form", None))
         self.label.setText(QCoreApplication.translate("mnConfig", u"........................Arquivo de Configura\u00e7\u00e3o...............................", None))
+        self.label_2.setText(QCoreApplication.translate("mnConfig", u"Testar:", None))
+        self.pushButton_4.setText("")
         self.label_6.setText(QCoreApplication.translate("mnConfig", u"Usu\u00e1rio :", None))
         self.label_7.setText(QCoreApplication.translate("mnConfig", u"Host Web :", None))
         self.label_8.setText(QCoreApplication.translate("mnConfig", u"Senha :", None))
         self.label_9.setText(QCoreApplication.translate("mnConfig", u"Porta Web :", None))
         self.checkbox_debug.setText(QCoreApplication.translate("mnConfig", u"Mode Debug.", None))
-        self.label_2.setText(QCoreApplication.translate("mnConfig", u"Testar:", None))
-        self.pushButton_4.setText("")
+        self.label_10.setText(QCoreApplication.translate("mnConfig", u"Porta Local : ", None))
         self.bnt_edit.setText(QCoreApplication.translate("mnConfig", u"Alterar", None))
 #if QT_CONFIG(shortcut)
         self.bnt_edit.setShortcut(QCoreApplication.translate("mnConfig", u"Alt+E", None))

@@ -27,6 +27,7 @@ settings_sec =  {
     'port_web': '5000',
     'host_web': '',
     'debug': 'False', 
+    'port_local': '00000'
 }
 
 
